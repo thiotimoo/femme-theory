@@ -63,7 +63,7 @@ export default function DashboardLayout({
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4 font-semibold text-lg max-sm:flex-row max-sm:gap-2 max-sm:items-center max-sm:justify-center">
+                    <div className="flex flex-col gap-4 font-semibold text-lg max-sm:flex-row max-sm:gap-2 max-sm:items-center max-sm:justify-center z-[10]">
                         <ItemNavigation href="/dashboard">
                             <House size={24} />
                             <span className = "max-sm:hidden">Home</span>
@@ -86,7 +86,7 @@ export default function DashboardLayout({
                         </ItemNavigation>
                     </div>
                 </div>
-                <div className="w-3/4 max-sm:w-full overflow-y-scroll pb-24">{children}</div>
+                <div className="w-3/4 max-sm:w-full overflow-y-scroll max-sm:pb-24">{children}</div>
             </div>
         </div>
     );

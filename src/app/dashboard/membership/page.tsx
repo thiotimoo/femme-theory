@@ -7,14 +7,19 @@ import {
 const Membership = () => {
   return (
     <div className = "w-full p-8 flex flex-col gap-6">
-      <div className = "w-full p-16 bg-pink-400/80 rounded-xl flex gap-2 shadow-lg justify-center items-center">
+      <div className = "w-full p-16 bg-pink-400/80 rounded-xl flex gap-2 shadow-lg md:justify-center md:items-center max-sm:flex-col">
         <h1 className = "text-4xl uppercase font-semibold text-slate-100 flex gap-6 items-center justify-center">
           <Medal size={38}/>
           Member Area
         </h1>
-        <div className = "flex flex-col ml-auto text-slate-100 justify-center">
-          <span className = "text-2xl font-semibold">Gold</span>
-          <span className = "text-lg">50XP lagi ke Platinum</span>
+        <div className = "flex flex-col md:ml-auto text-slate-100 justify-center mt-6">
+          <div className = "flex items-center w-full gap-4 md:min-w-[198px]">
+            <span className = "text-2xl font-semibold w-[40%]">Bronze</span>
+            <div className = "w-full bg-white p-1 rounded-lg">
+              <div className = "w-1/2 p-1 bg-zinc-800 rounded-md"></div>
+            </div>
+          </div>
+          <span className = "ml-auto font-light">50XP lagi ke <span className = "font-bold">Platinum</span></span>
         </div>
       </div>
 

@@ -71,13 +71,10 @@ const LandingLayout = () => {
                         Bukan hair dryer biasa
                     </h3>
                     <h1 className="text-5xl font-semibold">
-                        Produk hair dryer
+                        Femme Theory
                     </h1>
                     <span className="text-gray-700/90 text-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Vel dolor ab quod. Ab alias ea nostrum culpa, vitae
-                        perspiciatis dolorum nulla, eos quibusdam fugiat rem quo
-                        odio rerum ipsam modi!
+                        Femme Theory merupakan merek dari perusahaan kami yang fokus produksinya adalah produk peralatan perawatan rambut. Produk yang kami jual dibuat dengan teknologi mutakhir dengan desain yang elegan, dan pastinya fungsional. Temukan pengalaman berbelanja terbaikmu di sini!
                     </span>
                     <PrimaryButton className="z-10" href="/dashboard">Pergi ke Dasbor</PrimaryButton>
                 </div>

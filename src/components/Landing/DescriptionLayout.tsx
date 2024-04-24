@@ -115,7 +115,7 @@ const AboutProductSection = () => {
                     weight="fill"
                     size={48}
                 />
-                Apa itu Hairdryer-Femme?
+                Apa itu Femme Vit?
             </h2>
             <div className="flex md:flex-row flex-col justify-center items-center ">
                 <div className="pt-10 pl-20">
@@ -128,7 +128,7 @@ const AboutProductSection = () => {
                         </div>
                     </div>
                 </div>
-                <p className="w-full flex-1  max-w-screen-sm p-6 text-2xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius illo, alias ducimus veniam eos soluta accusantium minus. Libero nesciunt fugit quia perferendis impedit minus quam aliquam molestiae, at iure autem!</p>
+                <p className="w-full flex-1  max-w-screen-sm p-6 text-xl">Femme Vit merupakan produk pertama dari Femme Theory yang merupakan hairdryer 2 in 1 yang multifungsi. Produk ini tidak hanya dapat mengeringkan rambut, tapi juga dapat menyimpan hair vitamin di dalam tube, sehingga bisa disemprotkan. Hanya dengan mengaktifkan mode spray di sela mengeringkan rambut, Anda sudah menata rambut sekaligus menjaga kesehatan rambut Anda!</p>
             </div>
         </>
     );
