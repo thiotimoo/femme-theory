@@ -30,7 +30,7 @@ const LoginPage = () => {
         // </div>
 
         <div className="absolute w-full h-full bg-pink-100 text-lg">
-            <div className="absolute right-0 top-0 h-full w-full bg-pink-100 hero-bg"></div>
+            <div className="absolute right-0 top-0 h-full w-full bg-pink-100"></div>
 
             <div className = "absolute w-1/2 h-full left-0 top-0 p-8 flex items-center">
                 <img

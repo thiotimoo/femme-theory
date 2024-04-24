@@ -3,6 +3,7 @@ import { Masonry } from "react-plock";
 import React from "react";
 import currencyFormatter from "currency-formatter";
 import SearchShop from "@/components/Dashboard/Shop/SearchShop";
+import PurchaseDialog from "@/components/Dialogs/PurchaseDialog";
 const items = [
     {
         id: "001",
@@ -24,12 +25,16 @@ const items = [
         name: "Makarizo Hair Serum",
         price: 30_000,
         bg_color: "#F1F1F1",
+        image_url:
+            "https://hairenergy.co/wp-content/uploads/2023/04/Makarizo-VitaGlitz-SRE-8ml-Tube-Imagery-08072021-1.png",
     },
     {
         id: "001",
         name: "Makarizo Hair Serum",
         price: 30_000,
         bg_color: "#E3E2FF",
+        image_url:
+            "https://hairenergy.co/wp-content/uploads/2023/04/Makarizo-VitaGlitz-SRE-8ml-Tube-Imagery-08072021-1.png",
     },
     {
         id: "001",
@@ -51,12 +56,16 @@ const items = [
         name: "Makarizo Hair Serum",
         price: 30_000,
         bg_color: "#F1F1F1",
+        image_url:
+            "https://hairenergy.co/wp-content/uploads/2023/04/Makarizo-VitaGlitz-SRE-8ml-Tube-Imagery-08072021-1.png",
     },
     {
         id: "001",
         name: "Makarizo Hair Serum",
         price: 30_000,
         bg_color: "#E3E2FF",
+        image_url:
+            "https://hairenergy.co/wp-content/uploads/2023/04/Makarizo-VitaGlitz-SRE-8ml-Tube-Imagery-08072021-1.png",
     },
     {
         id: "001",
@@ -78,19 +87,23 @@ const items = [
         name: "Makarizo Hair Serum",
         price: 30_000,
         bg_color: "#F1F1F1",
+        image_url:
+            "https://hairenergy.co/wp-content/uploads/2023/04/Makarizo-VitaGlitz-SRE-8ml-Tube-Imagery-08072021-1.png",
     },
     {
         id: "001",
         name: "Makarizo Hair Serum",
         price: 30_000,
         bg_color: "#E3E2FF",
+        image_url:
+            "https://hairenergy.co/wp-content/uploads/2023/04/Makarizo-VitaGlitz-SRE-8ml-Tube-Imagery-08072021-1.png",
     },
 ];
 const ShopPage = () => {
     return (
         <div className="p-8 gap-4 flex flex-col max-sm:overflow-y-scroll">
             <h1 className="text-4xl font-bold">Shop</h1>
-            <SearchShop/>
+            <SearchShop />
             <Masonry
                 items={items}
                 config={{
@@ -99,29 +112,31 @@ const ShopPage = () => {
                     media: [640, 768, 1024],
                 }}
                 render={(item, idx) => (
-                    <div
-                        key={idx}
-                        style={{
-                            width: "100%",
-                            height: "auto",
-                            backgroundColor: item.bg_color,
-                        }}
-                        className="rounded-xl hover:border-zinc-800 border-transparent border-2 transition-all p-8"
-                    >
-                        <img
-                            src={item.image_url}
+                    <PurchaseDialog item={item}>
+                        <div
+                            key={idx}
                             style={{
                                 width: "100%",
                                 height: "auto",
+                                backgroundColor: item.bg_color,
                             }}
-                        />
-                        <p className="text-2xl font-bold">{item.name}</p>
-                        <p className="text-base">
-                            {currencyFormatter.format(item.price, {
-                                code: "IDR",
-                            })}
-                        </p>
-                    </div>
+                            className="rounded-xl hover:border-zinc-800 border-transparent border-2 transition-all p-8"
+                        >
+                            <img
+                                src={item.image_url}
+                                style={{
+                                    width: "100%",
+                                    height: "auto",
+                                }}
+                            />
+                            <p className="text-2xl font-bold">{item.name}</p>
+                            <p className="text-base">
+                                {currencyFormatter.format(item.price, {
+                                    code: "IDR",
+                                })}
+                            </p>
+                        </div>
+                    </PurchaseDialog>
                 )}
             />
         </div>

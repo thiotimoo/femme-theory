@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
     return (
-        <div className="flex flex-col overflow-x-hidden overflow-y-scroll">
+        <div className="flex flex-col overflow-x-hidden ">
             <LandingLayout/>
             <DescriptionLayout />
             <FooterLayout/>

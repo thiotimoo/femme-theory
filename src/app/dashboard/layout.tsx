@@ -4,10 +4,11 @@ import {
     House,
     Medal,
     Basket,
-    UsersThree
+    UsersThree,
 } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Navbar from "@/components/Landing/Navbar";
 
 interface ItemNavigationProps {
     children: React.ReactNode;
@@ -16,10 +17,12 @@ interface ItemNavigationProps {
 function ItemNavigation({ children, href }: ItemNavigationProps) {
     const pathname = usePathname();
     const _style_class =
-        pathname == href ? "bg-zinc-800 text-white" : "text-gray-700 max-sm:text-slate-100";
+        pathname == href
+            ? "bg-zinc-800 text-white"
+            : "text-gray-700 max-lg:text-slate-100";
     return (
         <Link
-            className={`transition-all px-6 py-3.5 max-sm:p-3 rounded-lg flex gap-3 ${_style_class}`}
+            className={`transition-all px-6 py-3.5 max-lg:p-3 rounded-lg flex gap-3 items-center ${_style_class}`}
             href={href}
         >
             {children}
@@ -33,19 +36,10 @@ export default function DashboardLayout({
 }) {
     return (
         <div className="w-full flex flex-col overflow-hidden">
-            <div className="px-8 py-6 border-b border-slate-400/70 w-full flex flex-row text-lg fixed items-center h-24">
-                <div className="font-semibold">Nama produk</div>
-
-                <div className="ml-auto flex gap-6">
-                    <span>Lorem</span>
-                    <span>Ipsum</span>
-                    <span>Dolor</span>
-                </div>
-            </div>
-
-            <div className="max-h-screen pt-24 w-full flex flex-1  items-stretch">
-                <div className="w-1/4 border-r border-slate-400/70 p-8 flex flex-col gap-6 max-sm:fixed max-sm:w-[calc(100%-4rem)] max-sm:bottom-8  max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:bg-pink-300 max-sm:rounded-xl max-sm:shadow-lg max-sm:p-4">
-                    <div className="flex w-full border border-slate-400/70 rounded-xl p-6 gap-4 max-sm:hidden">
+            <Navbar />
+            <div className="max-h-svh pt-24 w-full flex flex-1 items-stretch">
+                <div className="w-1/4 border-r border-slate-400/70 p-8 flex flex-col gap-6 max-lg:fixed max-lg:w-[calc(100%-4rem)] max-lg:bottom-8  max-lg:left-1/2 max-lg:-translate-x-1/2 max-lg:bg-pink-300 max-lg:rounded-xl max-lg:shadow-lg max-lg:p-4">
+                    <div className="flex w-full border border-slate-400/70 rounded-xl p-6 gap-4 max-lg:hidden">
                         <img
                             src="https://pics.craiyon.com/2023-07-15/dc2ec5a571974417a5551420a4fb0587.webp"
                             className="w-16 h-16 rounded-full"
@@ -63,30 +57,32 @@ export default function DashboardLayout({
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4 font-semibold text-lg max-sm:flex-row max-sm:gap-2 max-sm:items-center max-sm:justify-center z-[10]">
+                    <div className="flex flex-col gap-4 font-semibold text-lg max-lg:flex-row max-lg:gap-2 max-lg:items-center max-lg:justify-center z-[10]">
                         <ItemNavigation href="/dashboard">
                             <House size={24} />
-                            <span className = "max-sm:hidden">Home</span>
+                            <span className="max-lg:hidden">Home</span>
                         </ItemNavigation>
                         <ItemNavigation href="/dashboard/membership">
                             <Medal size={24} />
-                            <span className = "max-sm:hidden">Member Area</span>
+                            <span className="max-lg:hidden">Member Area</span>
                         </ItemNavigation>
                         <ItemNavigation href="/dashboard/shop">
                             <Basket size={24} />
-                            <span className = "max-sm:hidden">Shop</span>
+                            <span className="max-lg:hidden">Shop</span>
 
-                            <span className="bg-pink-300 px-4 py-1.5 uppercase text-xs ml-auto rounded-md text-slate-100 max-sm:hidden">
+                            <span className="bg-pink-300 px-4 py-1.5 uppercase text-xs ml-auto rounded-md text-slate-100 max-xl:hidden">
                                 Promo{" "}
                             </span>
                         </ItemNavigation>
                         <ItemNavigation href="/dashboard/forum">
-                        <UsersThree size={24} />
-                            <span className = "max-sm:hidden">Forum</span>
+                            <UsersThree size={24} />
+                            <span className="max-lg:hidden">Forum</span>
                         </ItemNavigation>
                     </div>
                 </div>
-                <div className="w-3/4 max-sm:w-full overflow-y-scroll max-sm:pb-24">{children}</div>
+                <div className="w-3/4 max-lg:w-full overflow-y-scroll max-lg:pb-24">
+                    {children}
+                </div>
             </div>
         </div>
     );
