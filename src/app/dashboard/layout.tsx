@@ -4,9 +4,8 @@ import {
     House,
     Medal,
     Basket,
-    SealPercent,
+    UsersThree
 } from "@phosphor-icons/react/dist/ssr";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -80,6 +79,10 @@ export default function DashboardLayout({
                             <span className="bg-pink-300 px-4 py-1.5 uppercase text-xs ml-auto rounded-md text-slate-100 max-sm:hidden">
                                 Promo{" "}
                             </span>
+                        </ItemNavigation>
+                        <ItemNavigation href="/dashboard/forum">
+                        <UsersThree size={24} />
+                            <span className = "max-sm:hidden">Forum</span>
                         </ItemNavigation>
                     </div>
                 </div>
