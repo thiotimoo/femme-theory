@@ -62,6 +62,7 @@ const Navbar = () => {
                 <ItemNavigation href="/dashboard">Dashboard</ItemNavigation>
                 <ItemNavigation href="/dashboard/shop">Shop</ItemNavigation>
                 <ItemNavigation href="/dashboard/forum">Forum</ItemNavigation>
+                <ItemNavigation href="/login">Login</ItemNavigation>
             </div>
             <div className="ml-auto hidden gap-6 max-sm:flex">
                 
@@ -84,6 +85,9 @@ const Navbar = () => {
                             </DropdownMenuRadioItem>
                             <DropdownMenuRadioItem value="/dashboard/forum">
                                 Forum
+                            </DropdownMenuRadioItem>
+                            <DropdownMenuRadioItem value="/login">
+                                Login
                             </DropdownMenuRadioItem>
                         </DropdownMenuRadioGroup>
                     </DropdownMenuContent>

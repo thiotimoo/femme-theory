@@ -39,7 +39,7 @@ export default function DashboardLayout({
         <div className="w-full flex flex-col overflow-hidden">
             <Navbar />
             <div className="max-h-svh pt-24 w-full flex flex-1 items-stretch">
-                <div className="lg:w-1/4 border-r border-slate-400/70 p-8 flex flex-col gap-6 max-lg:fixed max-lg:w-[calc(100%-4rem)] max-lg:bottom-8  max-lg:left-1/2 max-lg:-translate-x-1/2 max-lg:bg-pink-300 max-lg:rounded-xl max-lg:shadow-lg max-lg:p-4">
+                <div className="lg:w-1/4 border-r border-slate-400/70 p-8 flex flex-col gap-6 max-lg:fixed max-lg:w-[calc(100%-4rem)] max-lg:bottom-8  max-lg:left-1/2 max-lg:-translate-x-1/2 max-lg:bg-pink-300 max-lg:rounded-xl max-lg:shadow-lg max-lg:p-4 z-50">
                     <div className="flex w-full border border-slate-400/70 rounded-xl p-6 gap-4 max-lg:hidden">
                         <img
                             src="https://pics.craiyon.com/2023-07-15/dc2ec5a571974417a5551420a4fb0587.webp"
@@ -47,15 +47,15 @@ export default function DashboardLayout({
                             alt="Profile Picture"
                         />
 
-                        <div className="flex flex-col justify-center gap-0.5">
+                        <Link className="flex flex-col justify-center gap-0.5" href={"/login"}>
                             <span className="text-sm text-gray-700/70">
                                 Hey,{" "}
                             </span>
                             <span className="font-medium text-lg">
-                                Lorem Ipsum
+                                Anonymous Guest
                             </span>
-                            <span></span>
-                        </div>
+                            <span className="text-gray-700/70">Tap here to login</span>
+                        </Link>
                     </div>
 
                     <div className="flex flex-col gap-4 font-semibold text-lg max-lg:flex-row max-lg:gap-2 max-lg:items-center max-lg:justify-center z-20">

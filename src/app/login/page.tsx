@@ -53,8 +53,8 @@ const LoginPage = () => {
                 </div>
             </div>
 
-            <div className="absolute lg:w-1/2 w-[calc(100%-8rem)] h-full lg:right-0 top-0 -translate-x-1/2 lg:-translate-x-0 left-1/2 flex flex-col gap-6 justify-center">
-                <div className="bg-white shadow-lg p-16 text-gray-700 flex flex-col gap-8 z-10 w-full h-[calc(100%-4rem)] rounded-2xl lg:rounded-l-2xl border border-slate-400/70/50 overflow-auto">
+            <div className="absolute lg:w-1/2 w-[calc(100%-4rem)] h-full lg:right-0 top-0 -translate-x-1/2 lg:-translate-x-0 left-1/2 flex flex-col gap-6 justify-center">
+                <div className="bg-white shadow-lg lg:p-16 max-md:py-12 px-8 text-gray-700 flex flex-col gap-8 z-10 w-full h-[calc(100%-4rem)] rounded-2xl lg:rounded-l-2xl border border-slate-400/70/50 overflow-auto">
                     <div className="flex flex-col gap-2">
                         <h1 className="text-4xl font-bold">Welcome back!</h1>
                         <div>

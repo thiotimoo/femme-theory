@@ -130,7 +130,7 @@ const AboutProductSection = () => {
             transition={{ stiffness: 100 }}
             className="bg-zinc-800 text-white px-16 py-16 flex flex-col items-center gap-8 w-full max-sm:h-max lg:h-svh"
         >
-            <h2 className="text-4xl font-bold flex flex-row gap-4 items-center">
+            <h2 className="text-4xl font-bold flex flex-row gap-4 items-center" id = "product">
                 <SealQuestion
                     className="text-purple-400"
                     weight="fill"
@@ -146,7 +146,7 @@ const AboutProductSection = () => {
                     className="bg-zinc-900 rounded-2xl w-full h-96 md:flex-1 flex-auto overflow-clip"
                     id="3d-container"
                 >
-                    <ThreeScene parent="3d-container" color="#FFFFFF" />
+                    <ThreeScene parent="3d-container" color="#000000" />
                     {/* <img
                                 src="https://pngimg.com/d/hair_dryer_PNG10.png"
                                 className="z-20 h-80"

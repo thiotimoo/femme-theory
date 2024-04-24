@@ -76,7 +76,7 @@ const LandingLayout = () => {
                         fungsional. Temukan pengalaman berbelanja terbaikmu di
                         sini!
                     </span>
-                    <PrimaryButton className="z-10" href="/">
+                    <PrimaryButton className="z-10" href="#product">
                         Lihat produk
                     </PrimaryButton>
                 </motion.div>
