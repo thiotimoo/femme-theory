@@ -17,7 +17,7 @@ const FooterLayout = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ stiffness: 100 }}
-            className="flex flex-col px-16 py-12 text-white bg-zinc-900">
+            className="flex flex-col px-8 py-12 text-white bg-zinc-900">
             <div className="flex flex-col md:flex-row">
                 <div className="flex-1">
                     <span className="text-6xl">

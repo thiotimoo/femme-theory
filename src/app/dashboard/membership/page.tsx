@@ -36,14 +36,14 @@ const specialItems = [
 
 const Membership = () => {
     return (
-        <div className="w-full p-8 flex flex-col gap-6">
-            <div className="w-full p-16 bg-pink-400/80 rounded-xl flex gap-2 shadow-lg lg:justify-center lg:items-center max-lg:flex-col">
-                <h1 className="text-4xl uppercase font-semibold text-slate-100 flex gap-6 items-center justify-center">
+        <div className="w-full md:p-8 p-4  flex flex-col gap-6">
+            <div className="w-full md:p-16 p-4 bg-pink-400/80 rounded-xl flex gap-2 shadow-lg lg:justify-center lg:items-center max-lg:flex-col ">
+                <h1 className="text-4xl uppercase font-semibold text-slate-100 flex gap-6 items-start justify-center md:pt-0 pt-8 ">
                     <Medal size={38} />
                     Member Area
                 </h1>
                 <div className="flex flex-col lg:ml-auto text-slate-100 justify-center mt-6">
-                    <div className="flex items-center w-full gap-4 lg:min-w-[198px]">
+                    <div className="flex items-center w-full gap-4 lg:min-w-[198px] p-6 md:p-0">
                         <span className="text-2xl font-semibold w-[40%]">
                             Gold
                         </span>

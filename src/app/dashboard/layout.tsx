@@ -82,7 +82,7 @@ export default function DashboardLayout({
                     </div>
                 </div>
                 <div
-                    className={"overflow-y-scroll w-3/4 max-lg:pb-24 max-lg:w-full"}
+                    className={"overflow-y-scroll w-3/4 max-lg:pb-48 max-lg:w-full"}
                 >
                     {children}
                 </div>

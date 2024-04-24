@@ -53,9 +53,9 @@ const items = [
 ];
 const ShopPage = () => {
     return (
-        <div className="p-8 gap-4 flex flex-col">            
-            <div className="w-full p-16 bg-pink-400/80 rounded-xl flex gap-6 shadow-lg flex-col">
-                <h1 className="text-4xl uppercase font-semibold text-slate-100 flex gap-6">
+        <div className="md:p-8 p-4 gap-4 flex flex-col">            
+            <div className="w-full md:p-16 p-4 bg-pink-400/80 rounded-xl flex gap-6 shadow-lg flex-col">
+                <h1 className="text-4xl uppercase font-semibold text-slate-100 flex gap-6 p-6 md:p-0">
                     <Basket size={38} />
                     Shop
                 </h1>
