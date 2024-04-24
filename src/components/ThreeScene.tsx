@@ -8,10 +8,11 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 interface ItemProps {
     parent: string;
+    color: string;
+    customModel?: string;
 }
-const ThreeScene = ({ parent }: ItemProps) => {
+const ThreeScene = ({ parent, color, customModel }: ItemProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
-    let mounted = false;
 
     useEffect(() => {
         let map = document.getElementById(parent);
@@ -19,9 +20,7 @@ const ThreeScene = ({ parent }: ItemProps) => {
         let mapDimensions = map.getBoundingClientRect();
         let width = mapDimensions.width;
         let height = mapDimensions.height;
-        if (mounted) return;
         if (typeof window !== "undefined") {
-            mounted = true;
 
             // Initialize Three.js scene here
             const scene = new THREE.Scene();
@@ -36,6 +35,7 @@ const ThreeScene = ({ parent }: ItemProps) => {
             });
 
             renderer.setSize(width, height);
+            renderer.setClearColor( 0x000000, 0 );
             containerRef.current?.appendChild(renderer.domElement);
             camera.position.z = 4;
             const dracoLoader = new DRACOLoader();
@@ -48,12 +48,15 @@ const ThreeScene = ({ parent }: ItemProps) => {
             const loader = new GLTFLoader();
             loader.setDRACOLoader(dracoLoader);
 
+            const modelPath = customModel || "/models/glb/hairdryer.glb"
+
             loader.load(
-                "models/glb/hairdryer.glb",
+                modelPath,
                 function (gltf) {
+                    
                     var hemiLight = new THREE.HemisphereLight(
-                        0xffffff,
-                        0x444444
+                        parseInt('0x' + color.replaceAll('#', ''), 16),
+                        0x000000
                     );
                     hemiLight.position.set(0, 300, 0);
                     scene.add(hemiLight);
@@ -88,11 +91,14 @@ const ThreeScene = ({ parent }: ItemProps) => {
                     );
                     controls.target.set(0, 0.5, 0);
                     controls.update();
-                    controls.enablePan = true;
-                    controls.enableDamping = true;
+                    controls.minPolarAngle = Math.PI/2;
+                    controls.maxPolarAngle = Math.PI/2;
+                    controls.enablePan = false;
+                    controls.enableDamping = false;
 
                     // Render the scene and camera
                     const renderScene = () => {
+                        
                         gltf.scene.rotation.y += 0.001;
                         renderer.render(scene, camera);
                         requestAnimationFrame(renderScene);
@@ -138,9 +144,10 @@ const ThreeScene = ({ parent }: ItemProps) => {
             // Clean up the event listener when the component is unmounted
             return () => {
                 window.removeEventListener("resize", handleResize);
+                containerRef.current?.removeChild(renderer.domElement);
             };
         }
-    }, []);
+    }, [color]);
 
     return <div ref={containerRef} />;
 };

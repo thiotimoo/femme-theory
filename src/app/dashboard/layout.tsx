@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Navbar from "@/components/Landing/Navbar";
+import PageTransitionEffect from "@/components/PageTransitionEffect";
 
 interface ItemNavigationProps {
     children: React.ReactNode;
@@ -38,7 +39,7 @@ export default function DashboardLayout({
         <div className="w-full flex flex-col overflow-hidden">
             <Navbar />
             <div className="max-h-svh pt-24 w-full flex flex-1 items-stretch">
-                <div className="w-1/4 border-r border-slate-400/70 p-8 flex flex-col gap-6 max-lg:fixed max-lg:w-[calc(100%-4rem)] max-lg:bottom-8  max-lg:left-1/2 max-lg:-translate-x-1/2 max-lg:bg-pink-300 max-lg:rounded-xl max-lg:shadow-lg max-lg:p-4">
+                <div className="lg:w-1/4 border-r border-slate-400/70 p-8 flex flex-col gap-6 max-lg:fixed max-lg:w-[calc(100%-4rem)] max-lg:bottom-8  max-lg:left-1/2 max-lg:-translate-x-1/2 max-lg:bg-pink-300 max-lg:rounded-xl max-lg:shadow-lg max-lg:p-4">
                     <div className="flex w-full border border-slate-400/70 rounded-xl p-6 gap-4 max-lg:hidden">
                         <img
                             src="https://pics.craiyon.com/2023-07-15/dc2ec5a571974417a5551420a4fb0587.webp"
@@ -57,7 +58,7 @@ export default function DashboardLayout({
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4 font-semibold text-lg max-lg:flex-row max-lg:gap-2 max-lg:items-center max-lg:justify-center z-[10]">
+                    <div className="flex flex-col gap-4 font-semibold text-lg max-lg:flex-row max-lg:gap-2 max-lg:items-center max-lg:justify-center z-20">
                         <ItemNavigation href="/dashboard">
                             <House size={24} />
                             <span className="max-lg:hidden">Home</span>
@@ -80,7 +81,9 @@ export default function DashboardLayout({
                         </ItemNavigation>
                     </div>
                 </div>
-                <div className="w-3/4 max-lg:w-full overflow-y-scroll max-lg:pb-24">
+                <div
+                    className={"overflow-y-scroll w-3/4 max-lg:pb-24 max-lg:w-full"}
+                >
                     {children}
                 </div>
             </div>

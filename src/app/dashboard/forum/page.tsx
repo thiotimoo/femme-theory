@@ -7,6 +7,7 @@ import {
   ChatCircleDots,
   CheckFat
 } from "@phosphor-icons/react/dist/ssr";
+import { Metadata } from 'next'
 
 const Forum = () => {
   return (
@@ -29,7 +30,7 @@ const Forum = () => {
                             <span className = "">Teknis Produk</span>
                         </div>
                         <h2 className='text-xl font-medium'>Hair dryer saya konslet. Kira2 gimana ya?</h2>
-                        <span className = "text-sm opacity-70">25 April 2024</span>
+                        <span className = "text-sm text-gray-700/70">25 April 2024</span>
                     </div>
                     
                     <div className='flex gap-3 items-center md:ml-auto max-sm:mr-auto max-sm:mt-4'>
@@ -49,9 +50,9 @@ const Forum = () => {
             
                 <div className = "flex items-center ml-auto gap-2">
                     <ArrowFatUp size={28}/>
-                    <span className= 'opacity-70'>5</span>
+                    <span className= 'text-gray-700/70'>5</span>
                     <ChatCircleDots size={28} className='ml-4'/>
-                    <span className= 'opacity-70'>2</span>
+                    <span className= 'text-gray-700/70'>2</span>
                 </div>
             </div>
 
@@ -64,7 +65,7 @@ const Forum = () => {
                             <span> - Terjawab</span>
                         </div>
                         <h2 className='text-xl font-medium'>Apakah produknya bisa dikirim ke ngawi?</h2>
-                        <span className = "text-sm opacity-70">25 April 2024</span>
+                        <span className = "text-sm text-gray-700/70">25 April 2024</span>
                     </div>
                     
                     <div className='flex gap-3 items-center md:ml-auto max-sm:mr-auto max-sm:mt-4'>
@@ -92,9 +93,9 @@ const Forum = () => {
 
                 <div className = "flex items-center ml-auto gap-2">
                     <ArrowFatUp size={28}/>
-                    <span className= 'opacity-70'>5</span>
+                    <span className= 'text-gray-700/70'>5</span>
                     <ChatCircleDots size={28} className='ml-4'/>
-                    <span className= 'opacity-70'>2</span>
+                    <span className= 'text-gray-700/70'>2</span>
                 </div>
             </div>
         </div>

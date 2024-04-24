@@ -1,3 +1,4 @@
+"use client"
 import {
     ArrowRight,
     Envelope,
@@ -6,12 +7,17 @@ import {
     MapPin,
     PhoneCall,
 } from "@phosphor-icons/react/dist/ssr";
+import {motion} from "framer-motion";
 import Link from "next/link";
 import React from "react";
 
 const FooterLayout = () => {
     return (
-        <div className="flex flex-col px-16 py-12 text-white bg-zinc-900">
+        <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ stiffness: 100 }}
+            className="flex flex-col px-16 py-12 text-white bg-zinc-900">
             <div className="flex flex-col md:flex-row">
                 <div className="flex-1">
                     <span className="text-6xl">
@@ -52,7 +58,7 @@ const FooterLayout = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
