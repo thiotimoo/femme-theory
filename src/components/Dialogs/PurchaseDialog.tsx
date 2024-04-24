@@ -37,8 +37,7 @@ const ItemVariantColors = ({
     return (
         <button
             className={
-                "border-2 bg-zinc-100 w-12 h-12 rounded-lg p-1.5 " +
-                _selected
+                "border-2 bg-zinc-100 w-12 h-12 rounded-lg p-1.5 " + _selected
             }
             onClick={() => handleColor(variantColor)}
         >
@@ -50,7 +49,7 @@ const ItemVariantColors = ({
     );
 };
 
-const PurchaseDialogContent = ({ children, item }: ItemProps) => {
+const PurchaseDialogContent = ({ item }: any) => {
     let defaultColor = "";
     if (item.variantColors) {
         defaultColor = item.variantColors[0].color;
@@ -118,9 +117,10 @@ const PurchaseDialogContent = ({ children, item }: ItemProps) => {
                     <div className="flex flex-col mb-auto gap-2">
                         <h2 className="font-medium text-xl">Varian warna</h2>
                         <div className="flex gap-3">
-                            {item.variantColors.map((item: any) => {
+                            {item.variantColors.map((item: any, i: number) => {
                                 return (
                                     <ItemVariantColors
+                                        key={i}
                                         variantColor={item.color}
                                         selected={item.color === variantColor}
                                         handleColor={handleColor}
@@ -146,12 +146,12 @@ const PurchaseDialogContent = ({ children, item }: ItemProps) => {
         </div>
     );
 };
-const PurchaseDialog = ({ children, item }: ItemProps) => {
+const PurchaseDialog = ({ children, item }: any) => {
     return (
         <Dialog>
             <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent className="max-w-screen-lg lg:rounded-lg overflow-y-auto h-svh md:h-auto">
-                <PurchaseDialogContent children={children} item={item} />
+                <PurchaseDialogContent item={item} />
             </DialogContent>
         </Dialog>
     );
