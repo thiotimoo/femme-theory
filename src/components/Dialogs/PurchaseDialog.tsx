@@ -28,7 +28,7 @@ const PurchaseDialog = ({ children, item }: ItemProps) => {
     return (
         <Dialog>
             <DialogTrigger asChild>{children}</DialogTrigger>
-            <DialogContent className="max-w-screen-lg lg:rounded-lg">
+            <DialogContent className="max-w-screen-lg lg:rounded-lg overflow-y-scroll h-svh md:h-auto">
                 <DialogHeader>
                     <DialogTitle></DialogTitle>
                 </DialogHeader>

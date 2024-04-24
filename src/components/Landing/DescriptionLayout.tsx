@@ -5,7 +5,7 @@ import {
     Sparkle,
     StarFour,
     Wind,
-    PaperPlaneRight
+    PaperPlaneRight,
 } from "@phosphor-icons/react/dist/ssr";
 import React from "react";
 import ThreeScene from "../ThreeScene";
@@ -45,7 +45,7 @@ const FeatureItems = ({
 };
 const FiturUnggulanSection = () => {
     return (
-        <div className = "bg-white text-gray-700 px-16 py-12 flex flex-col items-center justify-center gap-8 w-full min-h-svh">
+        <div className="bg-white text-gray-700 px-16 py-12 flex flex-col items-center justify-center gap-8 w-full min-h-svh">
             <h2 className="text-4xl font-bold flex flex-row gap-4 items-center">
                 <StarFour className="text-orange-400" weight="fill" size={48} />
                 Fitur Unggulan
@@ -110,7 +110,7 @@ const FiturUnggulanSection = () => {
 
 const AboutProductSection = () => {
     return (
-        <div className = "bg-zinc-800 text-white px-16 py-12 flex flex-col items-center justify-center gap-8 w-full max-sm:h-max lg:h-svh">
+        <div className="bg-zinc-800 text-white px-16 py-12 flex flex-col items-center justify-center gap-8 w-full max-sm:h-max lg:h-svh">
             <h2 className="text-4xl font-bold flex flex-row gap-4 items-center text-center">
                 <SealQuestion
                     className="text-purple-400"
@@ -119,19 +119,26 @@ const AboutProductSection = () => {
                 />
                 Apa itu Femme Vit?
             </h2>
-            <div className="flex md:flex-row flex-col justify-center items-center ">
-                <div className="pt-10 pl-20">
-                    <div className="bg-orange-200 rounded-2xl">
-                        <div className="overflow-visible relative">
-                            <ThreeScene width={512} height={512}/>
-                            {/* <img
+            <div className="flex md:flex-row flex-col justify-center items-center w-full max-w-screen-md gap-6">
+                <div
+                    className="bg-zinc-900 rounded-2xl w-full h-96 md:flex-1 flex-auto overflow-clip"
+                    id="3d-container"
+                >
+                    <ThreeScene parent="3d-container" />
+                    {/* <img
                                 src="https://pngimg.com/d/hair_dryer_PNG10.png"
                                 className="z-20 h-80"
                             /> */}
-                        </div>
-                    </div>
                 </div>
-                <p className="w-full flex-1  max-w-screen-sm p-6 text-xl">Femme Vit merupakan produk pertama dari Femme Theory yang merupakan hairdryer 2 in 1 yang multifungsi. Produk ini tidak hanya dapat mengeringkan rambut, tapi juga dapat menyimpan hair vitamin di dalam tube, sehingga bisa disemprotkan. Hanya dengan mengaktifkan mode spray di sela mengeringkan rambut, Anda sudah menata rambut sekaligus menjaga kesehatan rambut Anda!</p>
+                <p className="w-full flex-1  max-w-screen-sm text-xl">
+                    Femme Vit merupakan produk pertama dari Femme Theory yang
+                    merupakan hairdryer 2 in 1 yang multifungsi. Produk ini
+                    tidak hanya dapat mengeringkan rambut, tapi juga dapat
+                    menyimpan hair vitamin di dalam tube, sehingga bisa
+                    disemprotkan. Hanya dengan mengaktifkan mode spray di sela
+                    mengeringkan rambut, Anda sudah menata rambut sekaligus
+                    menjaga kesehatan rambut Anda!
+                </p>
             </div>
         </div>
     );
@@ -139,26 +146,37 @@ const AboutProductSection = () => {
 
 const Newsletter = () => {
     return (
-        <div className = "bg-zinc-800 text-white px-16 py-12 flex flex-col items-center justify-center gap-8 w-full">
-            <h1 className = "text-4xl font-semibold">Mau dapat info terbaru dari kami?</h1>
-            <span className = "text-xl">Join newsletter untuk mendapatkan info-info dan promo menarik dari kami!</span>
+        <div className="bg-zinc-800 text-white px-16 py-12 flex flex-col items-center justify-center gap-8 w-full">
+            <h1 className="text-4xl font-semibold">
+                Mau dapat info terbaru dari kami?
+            </h1>
+            <span className="text-xl">
+                Join newsletter untuk mendapatkan info-info dan promo menarik
+                dari kami!
+            </span>
 
-            <div className = "py-2 pr-2 border border-slate-400/70 w-1/2 max-md:w-full text-gray-700 rounded-lg text-lg bg-white flex">
-                <input className = "w-full outline-none px-6" placeholder="me@mail.com" type="email"/>
-                <button className = "bg-pink-300 text-slate-100 rounded-md px-6 py-2 flex gap-3 items-center"><PaperPlaneRight size={24}/> Gabung</button>
+            <div className="py-2 pr-2 border border-slate-400/70 w-1/2 max-md:w-full text-gray-700 rounded-lg text-lg bg-white flex">
+                <input
+                    className="w-full outline-none px-6"
+                    placeholder="me@mail.com"
+                    type="email"
+                />
+                <button className="bg-pink-300 text-slate-100 rounded-md px-6 py-2 flex gap-3 items-center">
+                    <PaperPlaneRight size={24} /> Gabung
+                </button>
             </div>
 
-            <span className = "opacity-70">Kami gak akan spam kok! Janji.</span>
+            <span className="opacity-70">Kami gak akan spam kok! Janji.</span>
         </div>
-    )
-}
+    );
+};
 
 const DescriptionLayout = () => {
     return (
         <div>
             <AboutProductSection />
             <FiturUnggulanSection />
-            <Newsletter/>
+            <Newsletter />
         </div>
     );
 };

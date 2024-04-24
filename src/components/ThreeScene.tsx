@@ -7,31 +7,37 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 interface ItemProps {
-    width: number;
-    height: number;
+    parent: string;
 }
-const ThreeScene = ({ width, height }: ItemProps) => {
+const ThreeScene = ({ parent }: ItemProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     let mounted = false;
 
     useEffect(() => {
+        let map = document.getElementById(parent);
+        if (!map) return;
+        let mapDimensions = map.getBoundingClientRect();
+        let width = mapDimensions.width;
+        let height = mapDimensions.height;
         if (mounted) return;
         if (typeof window !== "undefined") {
             mounted = true;
 
             // Initialize Three.js scene here
             const scene = new THREE.Scene();
-            scene.background = new THREE.Color(0xffffff);
             const camera = new THREE.PerspectiveCamera(
                 75,
                 width / height,
                 0.1,
                 1000
             );
-            const renderer = new THREE.WebGLRenderer();
+            const renderer = new THREE.WebGLRenderer({
+                alpha: true,
+            });
+
             renderer.setSize(width, height);
             containerRef.current?.appendChild(renderer.domElement);
-            camera.position.z = 5;
+            camera.position.z = 4;
             const dracoLoader = new DRACOLoader();
 
             dracoLoader.setDecoderPath(
@@ -41,30 +47,26 @@ const ThreeScene = ({ width, height }: ItemProps) => {
 
             const loader = new GLTFLoader();
             loader.setDRACOLoader(dracoLoader);
-            /*
+
             loader.load(
                 "models/glb/hairdryer.glb",
-                function (object) {
-                    const model = object.scene;
-                    model.position.set(1, 1, 0);
-                    model.scale.set(0.5, 0.5, 0.5);
-                    scene.add(model);
-
-                },
-                function (xhr) {
-                    console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-                },
-                function (e) {
-                    console.error(e);
-                }
-            );*/
-
-            loader.load(
-                "models/glb/untitled.glb",
                 function (gltf) {
+                    var hemiLight = new THREE.HemisphereLight(
+                        0xffffff,
+                        0x444444
+                    );
+                    hemiLight.position.set(0, 300, 0);
+                    scene.add(hemiLight);
+
+                    var dirLight = new THREE.DirectionalLight(0xffffff);
+                    dirLight.position.set(75, 300, -75);
+                    scene.add(dirLight);
+
                     gltf.scene.traverse(function (child) {
                         if ((child as THREE.Mesh).isMesh) {
                             const m = child as THREE.Mesh;
+                            // @ts-ignore: Unreachable code error
+                            m.material.metalness = 0;
                             m.receiveShadow = true;
                             m.castShadow = true;
                         }
@@ -76,6 +78,8 @@ const ThreeScene = ({ width, height }: ItemProps) => {
                             l.shadow.mapSize.height = 2048;
                         }
                     });
+                    gltf.scene.rotation.set(0,-90,13);
+                    gltf.scene.scale.set(0.15, 0.15, 0.15);
                     scene.add(gltf.scene);
 
                     const controls = new OrbitControls(
@@ -89,7 +93,7 @@ const ThreeScene = ({ width, height }: ItemProps) => {
 
                     // Render the scene and camera
                     const renderScene = () => {
-                        gltf.scene.rotation.y += 0.01;
+                        gltf.scene.rotation.y += 0.001;
                         renderer.render(scene, camera);
                         requestAnimationFrame(renderScene);
                     };
@@ -104,11 +108,13 @@ const ThreeScene = ({ width, height }: ItemProps) => {
             );
 
             // Initialize the Three.js scene here (as in the previous example)
-
+            
             const handleResize = () => {
-                const width = window.innerWidth;
-                const height = window.innerHeight;
-
+                let map = document.getElementById(parent);
+                if (!map) return;
+                let mapDimensions = map.getBoundingClientRect();
+                let width = mapDimensions.width;
+                let height = mapDimensions.height;
                 camera.aspect = width / height;
                 camera.updateProjectionMatrix();
 
