@@ -17,7 +17,7 @@ const DashboardPage = () => {
         <h2 className = "text-3xl font-medium">Lihat apa yang baru</h2>
       
         <div className = "w-full border border-slate-400/70 rounded-lg p-8 flex max-md:flex-col gap-6">
-          <img src = "https://s2.bukalapak.com/bukalapak-kontenz-production/content_attachments/websites/3/94307/w-960/Happy_Shopping_artinya.jpg" className = "h-[256px] rounded-lg"/>
+          <img src = "https://s2.bukalapak.com/bukalapak-kontenz-production/content_attachments/websites/3/94307/w-960/Happy_Shopping_artinya.jpg" className = "h-[256px] rounded-lg object-cover"/>
 
           <div className = "flex flex-col gap-2">
             <h3 className = "text-xl font-medium">Dapatkan bonus akhir tahun!</h3>
@@ -30,7 +30,7 @@ const DashboardPage = () => {
         </div>
 
         <div className = "w-full border border-slate-400/70 rounded-lg p-8 flex max-md:flex-col gap-6">
-          <img src = "https://s2.bukalapak.com/bukalapak-kontenz-production/content_attachments/websites/3/94307/w-960/Happy_Shopping_artinya.jpg" className = "h-[256px] rounded-lg"/>
+          <img src = "https://s2.bukalapak.com/bukalapak-kontenz-production/content_attachments/websites/3/94307/w-960/Happy_Shopping_artinya.jpg" className = "h-[256px] rounded-lg object-cover"/>
 
           <div className = "flex flex-col gap-2">
             <h3 className = "text-xl font-medium">Dapatkan bonus akhir tahun!</h3>

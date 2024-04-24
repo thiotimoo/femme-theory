@@ -57,7 +57,7 @@ const FiturUnggulanSection = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ stiffness: 100 }}
-            className="bg-white text-gray-700 px-16 py-12 flex flex-col items-center justify-center gap-8 w-full min-h-svh"
+            className="bg-white text-gray-700 px-8 py-12 flex flex-col items-center justify-center gap-8 w-full min-h-svh"
         >
             <h2 className="text-4xl font-bold flex flex-row gap-4 items-center">
                 <StarFour className="text-orange-400" weight="fill" size={48} />
@@ -128,7 +128,7 @@ const AboutProductSection = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ stiffness: 100 }}
-            className="bg-zinc-800 text-white px-16 py-16 flex flex-col items-center gap-8 w-full max-sm:h-max lg:h-svh"
+            className="bg-zinc-800 text-white px-8 py-8 flex flex-col items-center gap-8 w-full max-sm:h-max lg:h-svh"
         >
             <h2 className="text-4xl font-bold flex flex-row gap-4 items-center" id = "product">
                 <SealQuestion
@@ -182,7 +182,7 @@ const Newsletter = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ stiffness: 100 }}
-            className="bg-zinc-800 text-white px-16 py-12 flex flex-col items-center justify-center gap-8 w-full"
+            className="bg-zinc-800 text-white px-8 py-12 flex flex-col items-center justify-center gap-8 w-full"
         >
             <h1 className="text-4xl font-semibold">
                 Mau dapat info terbaru dari kami?
