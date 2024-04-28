@@ -33,11 +33,11 @@ const FooterLayout = () => {
                     </p>
                     <p className="text-xl flex-row flex items-center gap-2">
                         <PhoneCall weight="bold" />
-                        0857-7059-0650
+                        +62 085X-XXXX-XXXX
                     </p>
                     <p className="text-xl flex-row flex items-center gap-2">
                         <MapPin weight="bold" />
-                        Karawang, Indonesia
+                        Jakarta, Indonesia
                     </p>
                 </div>
                 <div className="flex-1 flex flex-col justify-center gap-2">
