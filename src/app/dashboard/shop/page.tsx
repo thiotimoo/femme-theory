@@ -41,14 +41,14 @@ const items = [
         price: 30_000,
         bg_color: "#E3E2FF",
         image_url:
-            "https://media.discordapp.net/attachments/1231949327400960032/1232709978188546190/conditioner-bottle-JemWGA8-600-removebg-preview.png?ex=662a7221&is=662920a1&hm=c2b014399fd60221619998f89c503ed3aadbaac28e9bc3b011085b46f9ebae5b&=&format=webp&quality=lossless&width=421&height=421",
+            "https://media.discordapp.net/attachments/1234667423987269702/1234667490597015653/conditioner-bottle-JemWGA8-600-removebg-preview.png?ex=66319134&is=66303fb4&hm=864fa45d9c25bdd5dfb3bf0aa1721c30294c515dc44896cd456cb6bf056e3fe5&=&format=webp&quality=lossless&width=625&height=625",
     },
     {
         id: "001",
         name: "Hair Care Product Dummy 3",
         price: 200_000,
         bg_color: "#F0F0E0",
-        image_url: "https://cdn.discordapp.com/attachments/1231949327400960032/1232710310402719844/shampoobottle-removebg-preview.png?ex=662a7270&is=662920f0&hm=6c471ef462f5b1b1aa7972e4af72c3b699599a1a4ba6397f389dbdd6ff21a0f0&",
+        image_url: "https://media.discordapp.net/attachments/1234667423987269702/1234667530774122496/shampoobottle-removebg-preview.png?ex=6631913e&is=66303fbe&hm=420fc6a2ec2955c1443f9ee27c06c1a0fe4d3cf182f4b0d1498abe4e7d83e4a4&=&format=webp&quality=lossless&width=291&height=437",
     }
 ];
 const ShopPage = () => {

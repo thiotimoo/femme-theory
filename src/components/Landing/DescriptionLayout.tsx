@@ -146,7 +146,7 @@ const AboutProductSection = () => {
                     className="bg-zinc-900 rounded-2xl w-full h-96 md:flex-1 flex-auto overflow-clip"
                     id="3d-container"
                 >
-                    <ThreeScene parent="3d-container" color="#000000" />
+                    <ThreeScene parent="3d-container" color="#FFFFFF" />
                     {/* <img
                                 src="https://pngimg.com/d/hair_dryer_PNG10.png"
                                 className="z-20 h-80"
